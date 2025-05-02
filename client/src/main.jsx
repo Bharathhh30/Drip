@@ -5,6 +5,9 @@ import App from './App.jsx'
 import {createBrowserRouter} from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import Tipping from './pages/Tipping.jsx'
+import '@solana/wallet-adapter-react-ui/styles.css';
+import { WalletContextProvider } from './context/WalletProvider.jsx'
+import Gradient from './pages/Gradient.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,12 +17,18 @@ const router = createBrowserRouter([
   {
     path : "/tipping",
     element  : <Tipping/>
+  },
+  {
+    path : "/gradient",
+    element : <Gradient/>
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
-    <RouterProvider router={router} />
+    <WalletContextProvider>
+      <RouterProvider router={router} />
+    </WalletContextProvider>
   </StrictMode>,
 )
