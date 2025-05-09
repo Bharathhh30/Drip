@@ -35,32 +35,40 @@ export default function Tipping() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-6 px-4">
-      <h1 className="text-3xl font-bold">Tip a Creator</h1>
-      <WalletMultiButton />
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black text-white px-4 py-10">
+      <div className="w-full max-w-md bg-gray-800/70 backdrop-blur-md p-6 rounded-2xl shadow-xl">
+        <h1 className="text-3xl font-bold text-center mb-6">Tip a Creator</h1>
+        <div className="mb-4 flex justify-center">
+          <WalletMultiButton className="!bg-purple-600 hover:!bg-purple-700 transition" />
+        </div>
 
-      <input
-        className="p-2 rounded bg-gray-800 w-full max-w-md"
-        placeholder="Creator Wallet Address"
-        value={recipient}
-        onChange={(e) => setRecipient(e.target.value)}
-      />
+        <input
+          className="w-full mb-4 p-3 bg-gray-900 rounded-lg border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          placeholder="Creator Wallet Address"
+          value={recipient}
+          onChange={(e) => setRecipient(e.target.value)}
+        />
 
-      <input
-        className="p-2 rounded bg-gray-800 w-full max-w-md"
-        placeholder="Amount (SOL)"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
+        <input
+          className="w-full mb-4 p-3 bg-gray-900 rounded-lg border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          placeholder="Amount (SOL)"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
 
-      <button
-        onClick={handleTip}
-        className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
-      >
-        Send Tip
-      </button>
+        <button
+          onClick={handleTip}
+          className="w-full py-3 bg-green-500 hover:bg-green-600 rounded-lg text-lg font-semibold transition"
+        >
+          Send Tip
+        </button>
 
-      {status && <p className="mt-4 text-sm text-gray-300">{status}</p>}
+        {status && (
+          <p className="mt-4 text-sm text-center text-gray-300 break-words">
+            {status}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
