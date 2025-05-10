@@ -40,5 +40,5 @@ This project enables users to send **Solana tips** via **Blink links**, allowing
 
 ## 🔗 Links
 
-- **Frontend Repository:** [https://github.com/Bharathhh30/Drip](https://github.com/Bharathhh30/Drip)
+- **Frontend Repository:** [https://github.com/Bharathhh30/Solana-Hackathon](https://github.com/Bharathhh30/Solana-Hackathon)
 - **Live App:** [https://drip-one.vercel.app/](https://drip-one.vercel.app/)
